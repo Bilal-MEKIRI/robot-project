@@ -10,13 +10,13 @@ const app = express();
 const server = http.createServer(app); // Create an HTTP server
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000", //This will allow any origin to connect. Adjust this if you want to restrict origins.
+    origin: "*", //This will allow any origin to connect. Adjust this if you want to restrict origins.
     methods: ["GET", "POST"],
   },
 }); // Bind socket.io to that server
 
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "*" }));
 
 io.on("connection", (socket) => {
   console.log("New client connected");
