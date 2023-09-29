@@ -9,7 +9,6 @@ app.use(express.json());
 app.use(cors({ origin: "*" }));
 
 app.use("/", require("./ledState/ledRoute.js"));
-app.use("/", require("./potValue/potRoute.js"));
 
 app.listen(PORT, HOST, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
